@@ -9,8 +9,8 @@ app=Flask(__name__)
 def index():
     return "Hello from Flask!!"
 
-app.config['MONGO_DBNAME'] = 'saaa'
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/saaa'
+app.config[''] = 'uaaa'
+app.config['MONGO_URI'] = 'mongodb://localhost:27017/uaaa'
 mongo = PyMongo(app)
 count=0
 #cdbb actual data is stored
@@ -27,7 +27,7 @@ def get_all_datas():
     output = json.dumps(output)
     output = json.loads(output)
     #type(loaded_r)  # Output dict
-    print "Getting " + str({'results':output})
+    print "Getting " + str({'results':output})  + "\n"
     #print "Type: "+ str(type(output))
     return jsonify({'results':output})
 
@@ -42,7 +42,7 @@ def get_all_data(count):
     #output={'results': output}
     output = json.dumps(output)
     output = json.loads(output)
-    print "Getting " + str(output)
+    print "Getting " + str(output) + "\n"
     #print "The first one:" + str(output[0])
     return jsonify(output[count])
 
@@ -181,4 +181,4 @@ def add_data(name):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host="0.0.0.0")
+    app.run(host="107.21.7.23")
